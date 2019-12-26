@@ -8,6 +8,7 @@ import {Router,ActivatedRoute} from '@angular/router';
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css']
 })
+
 export class DetailsComponent implements OnInit {
   result:any;
   sub :any;
@@ -15,9 +16,8 @@ export class DetailsComponent implements OnInit {
   constructor(private http: HttpClient, public MoviesService:MoviesService, private Router : Router,private route: ActivatedRoute){};
 
   ngOnInit() {
-    const urlArr = this.route.snapshot.url;
-    console.log('O', urlArr[0].parameters.items);
-    this.showDetails(urlArr);
+    this.result = JSON.parse(localStorage.getItem('items'));
+    console.log('result', this.result);
   }
  
   showDetails(urlArr){
@@ -27,5 +27,7 @@ export class DetailsComponent implements OnInit {
     },error=>{
       alert('err');
     })
-  }
+    }
+
+  
 }

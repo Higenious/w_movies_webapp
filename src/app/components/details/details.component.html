@@ -1,6 +1,13 @@
-<div class="row">
-  <div class="col-sm-8">
-     
+<div class="container">
+  <div class="col-12">
+  <div class="row">
+      <div class="col-4"><img src="{{result.poster}}" alt="poster"></div>
+      <div class="col-8">
+        <h5>{{result.title}}</h5>
+        <p>{{result.length}} |  {{result.director}}  | {{result.released_on | date:'dd-MMM-yyyy'}}    </p>      
+        <p>{{result.cast}}</p>
+        <p>{{result.overview}}</p>  
+      </div>
+    </div>
   </div>
-  <div class="col-sm-4">col-sm-8</div>
 </div>
