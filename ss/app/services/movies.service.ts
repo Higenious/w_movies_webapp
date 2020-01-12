@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders,HttpParams} from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 import { interval } from 'rxjs';
-import { debounceTime, map } from 'rxjs/operators';
+import { debounceTime } from 'rxjs/operators';
 let headers = new HttpHeaders().append('Authorization', `Bearer Wookie2019`);
 let ApiURL = "https://wookie.codesubmit.io/movies";
 
@@ -12,9 +12,7 @@ let ApiURL = "https://wookie.codesubmit.io/movies";
 })
 export class MoviesService  {
    dataSource = new BehaviorSubject<any>({});
-   filtered = false;  
-   getnewData = this.dataSource.asObservable();
-
+    getnewData = this.dataSource.asObservable();
   constructor(public httpClient :HttpClient ) {     }
   
   getAllMovies(){
@@ -23,9 +21,7 @@ export class MoviesService  {
    
    searchMovie(items){
     const params = new HttpParams().set('q', items);
-    return this.httpClient.get( ApiURL, { params ,headers}).pipe(
-      map((Res:any)=>Res.movies)
-    )
+    return this.httpClient.get( ApiURL, { params ,headers})
    }
 }
 

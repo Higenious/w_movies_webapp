@@ -5,11 +5,14 @@
     </button>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    
+   
       <div class="form-inline my-2 my-lg-0" *ngIf="isHome()">
         <div class="input-group-prepend" >
         <span class="input-group-text"><i class="fa fa-search"></i></span></div>
         <input type="text"  (keydown.enter)="onSearchChange($event.target.value)" />
     </div>
+   
     </div>
   </nav> <hr>
   <router-outlet></router-outlet>

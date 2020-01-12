@@ -1,8 +1,8 @@
 
 
 <!-- Genres 1 --> 
-<h4 class="Genres"  *ngIf="filtered"> Genre  1</h4> 
-<div class="row"  *ngIf="filtered">
+<h4 class="Genres"> Genre  1</h4> 
+<div class="row">
   <div class="column" *ngFor="let data of myData | async, let i = index">
     <div class="card" *ngIf="getgenresone(data)">
      <h6>{{data.title}}</h6>
@@ -16,8 +16,8 @@
 
  
  <!-- Genres 2 --> 
-  <h4 class="Genres"  *ngIf="filtered"> Genre 2 </h4> 
- <div class="row"  *ngIf="filtered">
+  <h4 class="Genres"> Genre 2 </h4> 
+ <div class="row">
    <div class="column" *ngFor="let data of myData | async ; let i = index">
      <div class="card" *ngIf="getgenres(data)">
       <h6>{{data.title}}</h6>
@@ -31,8 +31,8 @@
  
  
  <!-- Genres 3 --> 
- <h4 class="Genres" *ngIf="filtered"> Genre 3 </h4> 
- <div class="row" *ngIf="filtered">
+ <h4 class="Genres"> Genre 3 </h4> 
+ <div class="row">
    <div class="column" *ngFor="let data of myData |async, let i = index">
      <div class="card" *ngIf="getgenresthree(data)">
       <h6>{{data.title}}</h6>
@@ -44,11 +44,10 @@
  </div> 
  
 
-
  <!-- filtered Data -->
  <h4 class="Genres" *ngIf="filtered"> Filtered Data </h4> 
  <div class="row" *ngIf="filtered">
-   <div class="column" *ngFor="let data of filteredData, let i = index">
+   <div class="column" *ngFor="let data of filteredData |async, let i = index">
      <div class="card">
       <h6>{{data.title}}</h6>
       <img src={{data.poster}}  alt="Avatar" class="image" (click)="getDetails(data)">

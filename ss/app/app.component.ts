@@ -26,12 +26,8 @@ export class AppComponent implements OnInit {
   onSearchChange(items) {
     this.MoviesService.searchMovie(items).subscribe(data=>{
       if(data){
-        console.log('data** search result', data);
          this.filteredData = data;
-         if(data){
-          this.MoviesService.dataSource.next(this.filteredData);
-          localStorage.setItem('filteredData', this.filteredData);   
-         }
+         localStorage.setItem('filteredData',this.filteredData);    
       }else{ 
         console.log('No Data found');
       }

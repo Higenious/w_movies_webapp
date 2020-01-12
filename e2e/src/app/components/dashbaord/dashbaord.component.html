@@ -6,7 +6,7 @@
   <div class="column" *ngFor="let data of myData | async, let i = index">
     <div class="card" *ngIf="getgenresone(data)">
      <h6>{{data.title}}</h6>
-     <img src={{data.poster}}  alt="Avatar" class="image" (click)="getDetails(data)">
+     <img src={{data.posterr}}  alt="Avatar" class="image" (click)="getDetails(data)">
    <p>Released_on :  {{data.released_on |date: 'dd/MM/yyyy'}}</p>
    <p>Director :   {{data.director}}</p>
     </div>
@@ -21,7 +21,7 @@
    <div class="column" *ngFor="let data of myData | async ; let i = index">
      <div class="card" *ngIf="getgenres(data)">
       <h6>{{data.title}}</h6>
-      <img src={{data.poster}}  alt="Avatar" class="image" (click)="getDetails(data)">
+      <img src={{data.posterr}}  alt="Avatar" class="image" (click)="getDetails(data)">
     <p>Released_on :  {{data.released_on |date: 'dd/MM/yyyy'}}</p>
     <p>Director :   {{data.director}}</p>
      </div>
@@ -36,7 +36,7 @@
    <div class="column" *ngFor="let data of myData |async, let i = index">
      <div class="card" *ngIf="getgenresthree(data)">
       <h6>{{data.title}}</h6>
-      <img src={{data.poster}}  alt="Avatar" class="image" (click)="getDetails(data)">
+      <img src={{data.posterr}}  alt="Avatar" class="image" (click)="getDetails(data)">
     <p>Released_on :  {{data.released_on |date: 'dd/MM/yyyy'}}</p>
     <p>Director :   {{data.director}}</p>
      </div>
@@ -51,7 +51,7 @@
    <div class="column" *ngFor="let data of filteredData, let i = index">
      <div class="card">
       <h6>{{data.title}}</h6>
-      <img src={{data.poster}}  alt="Avatar" class="image" (click)="getDetails(data)">
+      <img src={{data.posterr}}  alt="Avatar" class="image" (click)="getDetails(data)">
     <p>Released_on :  {{data.released_on |date: 'dd/MM/yyyy'}}</p>
     <p>Director :   {{data.director}}</p>
      </div>

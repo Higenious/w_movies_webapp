@@ -11,7 +11,7 @@ import {Router,ActivatedRoute} from '@angular/router';
 
 export class DetailsComponent implements OnInit {
   result:any;
-  sub :any;data 
+  sub :any;
   title:any;
   constructor(private http: HttpClient, public MoviesService:MoviesService, private Router : Router,private route: ActivatedRoute){};
 

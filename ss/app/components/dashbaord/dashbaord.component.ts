@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {MoviesService} from '../../services/movies.service';
-import { Observable } from 'rxjs';
 let headers = new HttpHeaders().append('Authorization', `Bearer Wookie2019`);
 let ApiURL = "https://wookie.codesubmit.io/movies";
 
@@ -19,27 +18,16 @@ export class DashbaordComponent implements OnInit {
   myData: any;
   items: any = [];
   result :any;
-  value:any;
-  filteredData:any=[];
-  data:any;
-  filtered;
   constructor(private http: HttpClient, public MoviesService:MoviesService, private Router : Router){};
  
   ngOnInit() {
-   this.getAllMovies();
-   this.MoviesService.getnewData.subscribe(
-    (response)=>{
-         this.filteredData =response; 
-         this.filtered = true;
-    }
-   );
+  this.getAllMovies();
   }
 
 
  getAllMovies(){
    this.MoviesService.getAllMovies().subscribe(
     (data: any) => {
-      this.filtered = false;
       console.log('data',data);
       // this.myData = data.movies;
       this.MoviesService.dataSource.next(data.movies);
@@ -85,6 +73,9 @@ export class DashbaordComponent implements OnInit {
   }
  }
 
- 
-}
+ filteredData(){
+  this.filteredData = JSON.parse(localStorage.getItem('filteredData'));
+  console.log('filterData', this.filteredData);
+ }
 
+}
